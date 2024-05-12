@@ -7,7 +7,7 @@ function main() {
   var interval = document.getElementById("interval");
   var btn = document.getElementById("btn");
 
-  if (!totalTime.value == "" && !interval.value == "") {
+  if (!totalTime.value == "" && !interval.value == "" && !parseInt(totalTime.value) < 0 && !parseInt(interval.value) < 0) {
     totalTime.setAttribute("class", "hide");
     interval.setAttribute("class", "hide");
     btn.setAttribute("class", "hide");
