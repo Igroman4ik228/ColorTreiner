@@ -4,11 +4,23 @@ body {
   font-family: "roboto", sans-serif;
 }
 
-.wrapper {
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#myForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 30px;
+  width: 300px;
+  margin: 0 auto;
 }
 
 #totalTime {
@@ -26,10 +38,72 @@ body {
   padding: 7px;
 }
 
-#btn {
-  margin-top: 20vh;
+
+.wrapper-color {
+  margin-top: 10px;
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 
-.hide {
-  display: none;
+.label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.checkbox:checked+.pseudo-checkbox {
+  background-image: url(../img/checkmark2.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pseudo-checkbox {
+  width: 17px;
+  height: 17px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.red {
+  color: rgb(228, 43, 43);
+}
+
+.blue {
+  color: rgb(38, 38, 216);
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.purple {
+  color: purple;
+}
+
+.orange {
+  color: orange;
+}
+
+.brown {
+  color: brown;
+}
+
+.pink {
+  color: pink;
+}
+
+.black {
+  color: black;
+}
+
+#btn {
+  margin-top: 13vh;
 }
