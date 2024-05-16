@@ -2,27 +2,40 @@ var form = document.getElementById("myForm");
 function handleForm(event) { event.preventDefault(); }
 form.addEventListener('submit', handleForm);
 
+let timer;
+let x;
+
 function main() {
-  var totalTime = document.getElementById("totalTime");
-  var interval = document.getElementById("interval");
 
+  let totalTime = document.getElementById("totalTime");
+  let interval = document.getElementById("interval");
 
-  if (!totalTime.value == "" && !interval.value == "" && !(parseInt(totalTime.value) < 0) && !(parseInt(interval.value) < 0)) {
-    var colorArr = getColor();
+  const totalTimelInt = parseInt(totalTime.value);
+  const intervalInt = parseInt(interval.value);
+
+  if (!totalTime.value == "" && !interval.value == "" && !(intervalInt < 0) && !(intervalInt < 0)) {
+
+    var colorArr = getColors();
     console.log(colorArr);
     if (colorArr.length == 0) {
       alert("Укажите не менее одного цвета");
       return;
     }
+
+    x = totalTimelInt;
+    console.log(totalTimelInt);
+
+    countdown();
+
     form.setAttribute("class", "visually-hidden");
 
     var color = getRandomColor(colorArr)
     console.log(color);
-
     document.body.style.backgroundColor = color;
 
     let timerId = setInterval(() => {
       color = getRandomColor(colorArr)
+      console.log(color);
       document.body.style.backgroundColor = color;
     }, interval.value * 1000)
 
@@ -36,9 +49,19 @@ function main() {
   }
 }
 
-function getColor() {
+function countdown() {
+  document.getElementById('timer').innerHTML = x;
+  x--;
+  if (x < 0) {
+    clearTimeout(timer);
+  }
+  else {
+    timer = setTimeout(countdown, 1000);
+  }
+}
+
+function getColors() {
   var checkbox = document.getElementsByClassName("checkbox");
-  console.log(checkbox);
   var arr = new Array();
   for (i = 0; i < checkbox.length; i++) {
     if (checkbox[i].checked) {
