@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), local('Roboto-Regular'),
+        url('subset-Roboto-Regular.woff2') format('woff2'),
+        url('subset-Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PoetsenOne';
+    src: local('PoetsenOne'), local('PoetsenOne-Regular'),
+        url('subset-PoetsenOne-Regular.woff2') format('woff2'),
+        url('subset-PoetsenOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
